@@ -1,35 +1,20 @@
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div id="app" class="theme-dark">
         <router-view></router-view>
+        <MainFooter />
     </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import MainFooter from "@/components/MainFooter";
 export default {
     name: "App",
-    components: {
-        HelloWorld
+    components: { MainFooter },
+    mounted() {
+        this.$store.dispatch("callSystemOptions");
     }
 };
 </script>
 
-<style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-.particles-js-canvas-el {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
+<style lang="scss">
 </style>
