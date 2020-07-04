@@ -7,6 +7,7 @@ import DynamicRoute from './../views/dynamic.vue';
 
 import VueAwesomeRoute from './../views/vue-awesome.vue';
 
+import ForRoute from '@/views/for.vue';
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -15,6 +16,10 @@ export default new VueRouter({
         {
             path: "/",
             component: HomeRoute,
+        },
+        {
+            path: "/for/:type",
+            component: ForRoute,
         },
         {
             path: "/vue-awesome",

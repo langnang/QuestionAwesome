@@ -1,5 +1,5 @@
 {
-  "name": "vue-demo",
+  "name": "question-awesome",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,6 @@
     "axios": "^0.18.0",
     "core-js": "^3.6.4",
     "element-ui": "^2.4.5",
-    "particles.js": "^2.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vue-wechat-title": "^2.0.5",
@@ -29,6 +28,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "sass-loader": "^9.0.0",
     "vue-cli-plugin-axios": "0.0.4",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-cli-plugin-fontawesome": "^0.2.0",
@@ -51,5 +51,18 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "<div style=\"text-align:center;\">\r     <img src=\"./src/assets/logo.png\" width=\"100\"/>\r </div>",
+  "main": "app.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/langnang/QuestionAwesome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/langnang/QuestionAwesome/issues"
+  },
+  "homepage": "https://github.com/langnang/QuestionAwesome#readme"
 }
