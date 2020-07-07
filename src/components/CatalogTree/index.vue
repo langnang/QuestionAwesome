@@ -2,11 +2,12 @@
     <div class="catalog-list">
         <el-card v-for="(cata,key) in tree" :key="key">
             <div slot="header" class="catalog-list__title">
-                <span>{{cata.name}}</span>
+                <span>{{cata.title}}</span>
                 <router-link
                     to
                     class="el-button el-button--default"
                     style="float:right;padding:12px 20px;font-size:14px;"
+                    :disabled="disabled"
                 >
                     <i class="el-icon-plus"></i>
                     Type
@@ -17,13 +18,19 @@
                 class="el-button el-button--default"
                 v-for="(ca,key_ca) in cata.children"
                 :key="key_ca"
-            >{{ca.name}}</router-link>
+            >{{ca.title}}</router-link>
         </el-card>
     </div>
 </template>
 <script>
 import { mapState } from "vuex";
 export default {
+    props: {
+        disabled: {
+            type: Boolean,
+            default: true
+        }
+    },
     data() {
         return {};
     },
