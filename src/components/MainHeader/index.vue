@@ -6,7 +6,7 @@
         <!-- <el-button type="text" style>
                 <i>search</i> Search...
         </el-button>-->
-        <router-link to class="el-button el-button--default">
+        <router-link to="login" class="el-button el-button--default">
             <font-awesome-icon :icon="['fab','github']" />&nbsp;Sign in
         </router-link>
         <router-link to class="el-button el-button--default" :disabled="disabled">

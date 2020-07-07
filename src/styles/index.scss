@@ -6,7 +6,7 @@ a {
     text-decoration: none;
 
     &[disabled="disabled"] {
-        cursor: not-allowed;
+        // cursor: not-allowed;
     }
 }
 
@@ -42,8 +42,8 @@ body {
     min-height: 100vh;
 
     >.el-row {
-        padding-left: 4rem;
-        padding-right: 4rem;
+        // padding-left: 4rem;
+        // padding-right: 4rem;
     }
 }
 
@@ -95,4 +95,8 @@ body {
             border-color: #1a202c;
         }
     }
+}
+
+[class^="view-"] {
+    min-height: calc(100vh - 320px);
 }
