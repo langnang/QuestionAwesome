@@ -1,5 +1,13 @@
+@import "./variables";
+@import './element';
+@import './mavon-editor';
+
 a {
     text-decoration: none;
+
+    &[disabled="disabled"] {
+        cursor: not-allowed;
+    }
 }
 
 html,
