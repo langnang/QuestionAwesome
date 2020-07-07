@@ -1,10 +1,6 @@
 <template>
     <div id="app" class="theme-dark">
-        <MainHeader>
-            <el-button>
-                <i class="el-icon-plus"></i> Catalog
-            </el-button>
-        </MainHeader>
+        <MainHeader></MainHeader>
         <router-view></router-view>
         <MainFooter />
     </div>

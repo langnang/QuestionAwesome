@@ -76,17 +76,12 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import { mavonEditor } from "mavon-editor"; //引入mavon-editor组件
-import "mavon-editor/dist/css/index.css"; //引入组件的样式
 export default {
     props: {
         visible: {
             type: Boolean,
             default: false
         }
-    },
-    components: {
-        mavonEditor
     },
     data() {
         return {

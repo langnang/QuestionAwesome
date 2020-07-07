@@ -1,12 +1,6 @@
 <template>
     <div class="view-catalog">
         <el-form ref="form" :model="form">
-            <el-form-item label="CATALOG">
-                <el-select v-model="form.catalog">
-                    <el-option label="区域一" value="shanghai"></el-option>
-                    <el-option label="区域二" value="beijing"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="KEY">
                 <el-input v-model="form.key"></el-input>
             </el-form-item>
@@ -28,7 +22,6 @@ export default {
     data() {
         return {
             form: {
-                catalog: "",
                 key: "",
                 title: "",
                 description: ""

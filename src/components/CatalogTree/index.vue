@@ -4,7 +4,7 @@
             <div slot="header" class="catalog-list__title">
                 <span>{{cata.title}}</span>
                 <router-link
-                    to
+                    to="type"
                     class="el-button el-button--default"
                     style="float:right;padding:12px 20px;font-size:14px;"
                     :disabled="disabled"
