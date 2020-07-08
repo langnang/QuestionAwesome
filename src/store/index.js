@@ -17,6 +17,14 @@ export default new Vuex.Store({
         question,
         user
     },
+    state: {
+        group_list: [],
+        type_list: [],
+        question_list: [],
+        owner: {},
+        repo: {
+        }
+    },
     actions,
     getters,
     mutations

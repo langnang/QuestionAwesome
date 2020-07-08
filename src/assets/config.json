@@ -1,5 +1,21 @@
 {
-    "catalog_tree": {
+    "catalog_tree": [
+        {
+            "id": 0,
+            "key": "",
+            "title": "",
+            "description": "",
+            "children": [
+                {
+                    "id": 0,
+                    "key": "",
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "__catalog_tree": {
         "education": {
             "id": 0,
             "title": "教育",

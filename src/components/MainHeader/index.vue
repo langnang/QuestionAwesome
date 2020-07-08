@@ -19,6 +19,11 @@
         <router-link v-else to="/login" class="el-button el-button--default">
             <font-awesome-icon :icon="['fab','github']" />&nbsp;Sign in
         </router-link>
+        <router-link
+            v-if="user.login=='langnang'"
+            to="/admin"
+            class="el-button el-button--default"
+        >Admin</router-link>
 
         <router-link
             :to="user.login?'/question':'/login'"
@@ -29,12 +34,12 @@
             Question
         </router-link>
         <router-link
-            :to="user.login?'/catalog':'/login'"
+            :to="user.login?'/group':'/login'"
             class="el-button el-button--default"
             :disabled="disabled"
         >
             <i class="el-icon-plus"></i>
-            Catalog
+            Group
         </router-link>
 
         <slot></slot>

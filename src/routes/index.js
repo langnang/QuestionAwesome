@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 
 import HomeRoute from '@/views/home.vue'
 import LoginRoute from '@/views/login.vue'
-import CatalogRoute from '@/views/catalog.vue'
+import GroupRoute from '@/views/group.vue'
 import TypeRoute from '@/views/type.vue'
 import QuestionRoute from '@/views/question.vue'
 import ErrorRoute from '@/views/error.vue'
@@ -31,12 +31,12 @@ export default new VueRouter({
             component: LoginRoute,
         },
         {
-            path: "/catalog",
-            component: CatalogRoute,
+            path: "/group",
+            component: GroupRoute,
         },
         {
-            path: "/catalog/:key",
-            component: CatalogRoute,
+            path: "/group/:key",
+            component: GroupRoute,
         },
         {
             path: "/type",

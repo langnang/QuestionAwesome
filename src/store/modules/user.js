@@ -5,9 +5,9 @@ export default {
         info: {},
 
         oauth: {
-            client_id: "05a9b61fa22f06062b32",
+            client_id: "Iv1.312c32dbc9a31bfa",
             redirect_url: "http://localhost:8080/#/api/oauth",
-            client_secret: "47dc2b92c4164a5f7c145c70a9324d1ec5731750",
+            client_secret: "ba151763fc8b24b346284864e5a42b57fb04a399",
             code: "",
             validity: "page",
             message: "No OAuth Info, Please Sign in.",
@@ -50,7 +50,7 @@ export default {
                 url: `https://api.github.com/user`,
                 headers: {
                     accept: 'application/json',
-                    Authorization: `token ${state.token.access_token}`
+                    Authorization: `Bearer ${state.token.access_token}`
                 }
             }).then(function (_res) {
                 // console.log(_res.data);

@@ -13,6 +13,9 @@ export default {
     name: "App",
     components: { MainHeader, MainFooter },
     mounted() {
+        console.log(this);
+        console.log(this.$router);
+        console.log(this.$store);
         this.$store.dispatch("callSystemOptions");
         this.$store.dispatch("getUser");
     }

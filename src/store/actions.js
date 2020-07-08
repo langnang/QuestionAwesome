@@ -15,7 +15,9 @@ export default {
                 const content = _res.data.body;
                 const options = parseOption(content);
                 commit("setCatalogTree", options.catalog_tree || {});
-                commit("setQuestionList", options.question_list || {});
+                commit("setGroupList", options.group_list || []);
+                commit("setTypeList", options.type_list || []);
+                commit("setQuestionList", options.question_list || []);
             }).catch(function () {
                 // dispatch("callSystemOptions");
                 _this.$alert('请求系统数据失败，请重新刷新页面！！！', 'Error', {
@@ -41,5 +43,44 @@ export default {
         } else {
             console.log("no storage token");
         }
-    }
+    },
+    getAnIssue() { },
+    createAnIssue({ state }, data) {
+        this._vm
+            .$axios({
+                method: "POST",
+                url: "https://api.github.com/repos/langnang/QuestionAwesome/issues",
+                data: data,
+                headers: {
+                    accept: "application/json",
+                    Authorization: `token ${state.user.token.access_token}`
+                }
+            })
+            .then(function (_res) {
+                console.log(_res.data)
+            })
+            .catch(function (_err) {
+                console.log(_err);
+            })
+    },
+    updateAnIssue({ state }, data) {
+        this._vm
+            .$axios({
+                method: "PATCH",
+                url: "https://api.github.com/repos/langnang/QuestionAwesome/issues",
+                data: data,
+                headers: {
+                    accept: "application/json",
+                    Authorization: `token ${state.user.token.access_token}`
+                }
+            })
+            .then(function (_res) {
+                console.log(_res.data)
+            })
+            .catch(function (_err) {
+                console.log(_err);
+            })
+    },
+    lockAnIssue() { },
+    unlockAnIssue() { }
 }

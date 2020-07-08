@@ -62,7 +62,7 @@ export default {
                 default:
                     break;
             }
-            // window.location.href = "/";
+            window.location.href = "/";
         }
     },
     computed: {
