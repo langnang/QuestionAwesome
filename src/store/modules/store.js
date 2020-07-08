@@ -1,6 +1,6 @@
 export default {
     state: {
-        count: 1
+        count: 1,
     },
     mutations: {
         // _(state, payload) { }

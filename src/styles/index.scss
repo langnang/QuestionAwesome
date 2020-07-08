@@ -99,4 +99,10 @@ body {
 
 [class^="view-"] {
     min-height: calc(100vh - 320px);
+
+    &.flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

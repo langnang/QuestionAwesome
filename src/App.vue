@@ -14,6 +14,7 @@ export default {
     components: { MainHeader, MainFooter },
     mounted() {
         this.$store.dispatch("callSystemOptions");
+        this.$store.dispatch("getUser");
     }
 };
 </script>
