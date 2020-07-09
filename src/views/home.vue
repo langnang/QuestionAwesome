@@ -1,14 +1,14 @@
 <template>
     <div class="view-home">
-        <CatalogTree />
+        <GroupList />
     </div>
 </template>
 
 <script>
-import CatalogTree from "./../components/CatalogTree";
+import GroupList from "./../components/GroupList";
 export default {
     components: {
-        CatalogTree
+        GroupList
     }
 };
 </script>

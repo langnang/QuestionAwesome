@@ -51,6 +51,10 @@ export default new VueRouter({
             component: ForRoute,
         },
         {
+            path: "/admin",
+            component: () => import("@/views/admin")
+        },
+        {
             path: "*",
             component: ErrorRoute,
         }

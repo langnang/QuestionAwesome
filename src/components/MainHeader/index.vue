@@ -6,6 +6,7 @@
         <!-- <el-button type="text" style>
                 <i>search</i> Search...
         </el-button>-->
+
         <a
             v-if="user.login"
             :href="user.html_url"
@@ -13,9 +14,10 @@
             :disabled="disabled"
             target="_blank"
         >
-            <el-avatar size="small" shape="square" :src="user.avatar_url"></el-avatar>
+            <el-avatar size="small" :src="user.avatar_url"></el-avatar>
             {{user.login}}
         </a>
+
         <router-link v-else to="/login" class="el-button el-button--default">
             <font-awesome-icon :icon="['fab','github']" />&nbsp;Sign in
         </router-link>
@@ -24,7 +26,6 @@
             to="/admin"
             class="el-button el-button--default"
         >Admin</router-link>
-
         <router-link
             :to="user.login?'/question':'/login'"
             class="el-button el-button--default"

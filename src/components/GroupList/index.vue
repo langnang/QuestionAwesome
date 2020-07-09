@@ -4,7 +4,7 @@
             <div slot="header" class="catalog-list__title">
                 <span>{{group.value}}</span>
                 <router-link
-                    to="type"
+                    :to="user.login?'/type':'/login'"
                     class="el-button el-button--default"
                     style="float:right;padding:12px 20px;font-size:14px;"
                     :disabled="disabled"
@@ -37,7 +37,8 @@ export default {
     computed: {
         ...mapState({
             group_list: state => state.group_list,
-            tree: state => state.catalog.tree
+            tree: state => state.catalog.tree,
+            user: state => state.user.info
         })
     },
     methods: {

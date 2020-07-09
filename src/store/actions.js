@@ -46,6 +46,7 @@ export default {
     },
     getAnIssue() { },
     createAnIssue({ state }, data) {
+        let _this = this._vm;
         this._vm
             .$axios({
                 method: "POST",
@@ -57,7 +58,20 @@ export default {
                 }
             })
             .then(function (_res) {
-                console.log(_res.data)
+                console.log(_res.data);
+                _this.$confirm('记录已提交，是否继续操作?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    _this.$message({
+                        type: 'success',
+                    });
+                }).catch(() => {
+                    _this.$message({
+                        type: 'info',
+                    });
+                });
             })
             .catch(function (_err) {
                 console.log(_err);
