@@ -1,4 +1,4 @@
-const parseOption = function (content) {
+const parseBody = function (content) {
     const [start, end] = ['```json', '```'];
     // console.log(content.indexOf(start));
     // console.log(content.lastIndexOf(end));
@@ -7,4 +7,4 @@ const parseOption = function (content) {
     return JSON.parse(content.substring(content.indexOf(start) + start.length, content.lastIndexOf(end)));
 };
 
-export default parseOption;
+export default parseBody;

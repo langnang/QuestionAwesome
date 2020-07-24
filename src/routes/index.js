@@ -52,7 +52,21 @@ export default new VueRouter({
         },
         {
             path: "/admin",
-            component: () => import("@/views/admin")
+            component: () => import("@/views/admin"),
+            children: [
+                {
+                    path: "group",
+                    component: () => import("@/views/admin/group")
+                },
+                {
+                    path: "type",
+                    component: () => import("@/views/admin/type")
+                },
+                {
+                    path: "question",
+                    component: () => import("@/views/admin/question")
+                },
+            ]
         },
         {
             path: "*",

@@ -36,7 +36,7 @@ export default {
                 // 保存code
                 this.$store.commit("setUserOAuthCode", data.code);
                 // 请求用户令牌
-                this.$store.dispatch("callUserToken");
+                this.$store.dispatch("getUserToken");
             } else {
                 this.$store.commit("setUserOAuthMessage", 0);
             }

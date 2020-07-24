@@ -56,7 +56,7 @@ export default {
                 this.form.description
             ) {
                 this.$store.dispatch("createAnIssue", {
-                    title: `[New Type] ${this.form.key}：${this.form.value}`,
+                    title: `[INSERT TYPE] ${this.form.key}: ${this.form.value}`,
                     body: `\`\`\`json\n${JSON.stringify(this.form)}\n\`\`\``
                 });
             } else {

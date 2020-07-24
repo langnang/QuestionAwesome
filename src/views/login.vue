@@ -1,7 +1,7 @@
 <template>
     <div class="view-login">
         <a
-            :href="'https://github.com/login/oauth/authorize?client_id='+oauth.client_id+'&redirect_url='+oauth.redirect_url"
+            :href="'https://github.com/login/oauth/authorize?client_id='+githubApp.client_id+'&redirect_url='+githubApp.redirect_url"
         >
             <el-button>
                 <font-awesome-icon :icon="['fab','github']" />&nbsp;&nbsp;&nbsp;
@@ -15,7 +15,7 @@ import { mapState } from "vuex";
 export default {
     computed: {
         ...mapState({
-            oauth: state => state.user.oauth
+            githubApp: state => state.githubApp
         })
     }
 };

@@ -11,7 +11,8 @@
                 <el-input type="textarea" v-model="form.description"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="onSubmit">提交</el-button>
+                <el-button type="primary" @click="onSubmit('insert')">创建</el-button>
+                <el-button type="primary" @click="onSubmit('update')">提交</el-button>
                 <router-link to="/" class="el-button el-button--default">取消</router-link>
             </el-form-item>
         </el-form>
@@ -22,6 +23,8 @@ export default {
     data() {
         return {
             form: {
+                id: 0,
+                number: 0,
                 key: "",
                 value: "",
                 description: ""
@@ -34,13 +37,19 @@ export default {
         };
     },
     methods: {
-        onSubmit() {
-            console.log("submit!");
+        onSubmit(target) {
             if (this.form.key && this.form.value && this.form.description) {
-                this.$store.dispatch("createAnIssue", {
-                    title: `[New Group] ${this.form.key}：${this.form.value}`,
-                    body: `\`\`\`json\n${JSON.stringify(this.form)}\n\`\`\``
-                });
+                if (target == "insert") {
+                    this.$store.dispatch("createAnIssue", {
+                        title: `[INSERT GROUP] ${this.form.key}: ${this.form.value}`,
+                        body: `\`\`\`json\n${JSON.stringify(this.form)}\n\`\`\``
+                    });
+                } else if (target == "update") {
+                    this.$store.dispatch("createAnIssue", {
+                        title: `[UPDATE GROUP] ${this.form.key}: ${this.form.value}`,
+                        body: `\`\`\`json\n${JSON.stringify(this.form)}\n\`\`\``
+                    });
+                }
             } else {
                 this.$refs["form"].validate(valid => {
                     if (valid) {
@@ -54,6 +63,12 @@ export default {
                     confirmButtonText: "确定"
                 });
             }
+        }
+    },
+    computed: {
+        group_info() {
+            console.log(this.$store.getters.group_info());
+            return this.$store.getters.group_info();
         }
     }
 };

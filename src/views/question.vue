@@ -107,7 +107,7 @@ export default {
                 this.form.explanation
             ) {
                 this.$store.dispatch("createAnIssue", {
-                    title: `[New Question] ${this.form.title}`,
+                    title: `[INSERT QUESTION] ${this.form.title}`,
                     body: `\`\`\`json\n${JSON.stringify(this.form)}\n\`\`\``
                 });
             } else {

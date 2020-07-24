@@ -3,11 +3,7 @@ export default {
     state: {
         active: false,
         info: {},
-
         oauth: {
-            client_id: "Iv1.312c32dbc9a31bfa",
-            redirect_url: "http://localhost:8080/#/api/oauth",
-            client_secret: "ba151763fc8b24b346284864e5a42b57fb04a399",
             code: "",
             validity: "page",
             message: "No OAuth Info, Please Sign in.",
@@ -42,34 +38,29 @@ export default {
         }
 
     },
+    // 
     getters: {},
     actions: {
-        callUserInfo({ commit, state }) {
-            this._vm.$axios({
-                method: 'get',
-                url: `https://api.github.com/user`,
-                headers: {
-                    accept: 'application/json',
-                    Authorization: `Bearer ${state.token.access_token}`
-                }
-            }).then(function (_res) {
-                // console.log(_res.data);
-                commit("setUserOAuthMessage", 4);
-                commit("setUserInfo", _res.data);
-                console.log(_res.data);
-                // console.log(getQuery(_res.data));
-            }).catch(function (_err) {
-                console.log(_err);
-            })
+        getUserInfo({ commit, dispatch }) {
+            // commit("setAppLoading", true);
+            dispatch("$getUserInfo")
+                .then(function (_res) {
+                    commit("setUserOAuthMessage", 4);
+                    commit("setUserInfo", _res.data);
+                }).catch(function (_err) {
+                    console.log(_err);
+                })
         },
-        callUserToken({ state, dispatch, commit }) {
+        getUserToken({ state, dispatch, commit, rootState }) {
             commit("setUserOAuthMessage", 1);
+            console.log(state)
+            console.log(rootState)
             this._vm.$axios({
                 method: "POST",
                 // url: 'https://github.com/login/oauth/access_token?' +
                 url: '/access_token?' +
-                    `client_id=${state.oauth.client_id}&` +
-                    `client_secret=${state.oauth.client_secret}&` +
+                    `client_id=${rootState.githubApp.client_id}&` +
+                    `client_secret=${rootState.githubApp.client_secret}&` +
                     `code=${state.oauth.code}`,
                 headers: {
                     accept: "application/json"
@@ -84,7 +75,7 @@ export default {
                     commit("setUserToken", token);
                     commit("setUserOAuthMessage", 3);
                     // 请求用户数据
-                    dispatch("callUserInfo")
+                    dispatch("getUserInfo")
                 }
                 else {
                     throw new Error(token.error);

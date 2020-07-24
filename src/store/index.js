@@ -1,31 +1,39 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import store from './modules/store';
-import catalog from './modules/catalog';
-import question from './modules/question';
-import user from './modules/user';
-import actions from './actions';
-import getters from './getters';
 import mutations from './mutations';
+import getters from './getters';
+import actions from './actions';
+
+import $app from './modules/$app';
+import user from './modules/user';
+import group from './modules/group';
+import type from './modules/type';
+import question from './modules/question';
+import issue from './modules/issue';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
-        store,
-        catalog,
+        $app,
+        user,
+        group,
+        type,
         question,
-        user
+        issue,
     },
     state: {
-        group_list: [],
-        type_list: [],
-        question_list: [],
-        owner: {},
-        repo: {
+        host: "https://api.github.com",
+        owner: "langnang",
+        repo: "QuestionAwesome",
+        app: {},
+        githubApp: {
+            client_id: "Iv1.312c32dbc9a31bfa",
+            redirect_url: "http://localhost:8080/api/oauth",
+            client_secret: "ba151763fc8b24b346284864e5a42b57fb04a399",
         }
     },
-    actions,
+    mutations,
     getters,
-    mutations
+    actions,
 })

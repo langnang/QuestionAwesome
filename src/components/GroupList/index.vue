@@ -36,8 +36,7 @@ export default {
     },
     computed: {
         ...mapState({
-            group_list: state => state.group_list,
-            tree: state => state.catalog.tree,
+            group_list: state => state.group.list,
             user: state => state.user.info
         })
     },
