@@ -1,6 +1,5 @@
 <template>
     <div class="view-for">
-        <MainHeader></MainHeader>
         <FilterList v-if="false" />
         <el-row :gutter="30" style="margin:0 10px;">
             <el-col :span="8" style="height:70vh;overflow-y:scroll;">
@@ -20,13 +19,11 @@
 <script>
 import { mapState } from "vuex";
 
-import MainHeader from "./../components/MainHeader";
 import FilterList from "@/components/FilterList";
 import Question from "@/components/Question";
 import QuestionList from "@/components/QuestionList";
 export default {
     components: {
-        MainHeader,
         FilterList,
         Question,
         QuestionList

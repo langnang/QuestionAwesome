@@ -1,10 +1,10 @@
 <template>
     <div class="catalog-list">
-        <el-card v-for="(cata,key) in tree" :key="key">
+        <el-card v-for="group in group_list" :key="group.key">
             <div slot="header" class="catalog-list__title">
-                <span>{{cata.title}}</span>
+                <span>{{group.value}}</span>
                 <router-link
-                    to
+                    :to="user.login?'/type':'/login'"
                     class="el-button el-button--default"
                     style="float:right;padding:12px 20px;font-size:14px;"
                     :disabled="disabled"
@@ -14,11 +14,11 @@
                 </router-link>
             </div>
             <router-link
-                :to="'/for/'+key_ca"
+                :to="'/for/'+type.key"
                 class="el-button el-button--default"
-                v-for="(ca,key_ca) in cata.children"
-                :key="key_ca"
-            >{{ca.title}}</router-link>
+                v-for="type in type_list(group.key)"
+                :key="type.key"
+            >{{type.value}}</router-link>
         </el-card>
     </div>
 </template>
@@ -36,8 +36,14 @@ export default {
     },
     computed: {
         ...mapState({
-            tree: state => state.catalog.tree
+            group_list: state => state.group.list,
+            user: state => state.user.info
         })
+    },
+    methods: {
+        type_list(group_key) {
+            return this.$store.getters.getTypeList(group_key);
+        }
     }
 };
 </script>

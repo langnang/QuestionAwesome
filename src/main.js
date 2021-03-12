@@ -1,10 +1,11 @@
 import Vue from 'vue'
-import './plugins/axios'
-import './plugins/fontawesome'
-import App from './App.vue'
-import router from './routes'
-import store from './store'
-import './plugins/element.js'
+import App from '@/App.vue'
+import router from '@/routes'
+import store from '@/store'
+import '@/plugins/axios'
+import '@/plugins/element'
+import '@/plugins/fontawesome'
+import '@/plugins/mavon-editor'
 import '@/styles/index.scss'
 
 Vue.config.productionTip = false

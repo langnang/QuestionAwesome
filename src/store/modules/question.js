@@ -1,4 +1,4 @@
-import parseOption from '@/utils/parseOption';
+import parseBody from '@/utils/parseBody';
 // import ques from '@/assets/question.json';
 export default {
     state: {
@@ -44,7 +44,7 @@ export default {
                 .then(function (_res) {
                     // console.log(_res.data);
                     context.commit("setQuestionIssue", _res.data);
-                    context.commit("setQuestionActive", { ...parseOption(_res.data.body), comments: _res.data.comments } || {});
+                    context.commit("setQuestionActive", { ...parseBody(_res.data.body), comments: _res.data.comments } || {});
                 })
             context.dispatch("callQuestionComments", payload);
             // context.commit("setQuestionActive", ques);

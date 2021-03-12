@@ -13,6 +13,7 @@
 
             .v-note-show {
                 display: none;
+
             }
         }
     }
@@ -33,6 +34,9 @@
                 flex: unset;
                 width: 100%;
 
+                .v-show-content {
+                    background-color: $dark !important;
+                }
 
             }
         }
@@ -67,8 +71,6 @@
         }
     }
 
-    .v-show-content {
-        background-color: $dark !important;
-    }
+
 
 }
